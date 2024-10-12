@@ -16,6 +16,13 @@
 	line-height: 1 !important;
 }
 
+
+@media screen and (min-width: 400px) {
+	#header-wrap #logo img {
+		height: 70px;
+	}
+}
+
 @media screen and (min-width: 1200px) {
 	.single-post .post-image img {
 		display: block;
