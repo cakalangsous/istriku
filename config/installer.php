@@ -23,7 +23,7 @@ return [
         'php' => [
             'openssl',
             'pdo',
-            'mbstring',
+            // 'mbstring',
             'tokenizer',
             'JSON',
             'cURL',
