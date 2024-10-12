@@ -26,11 +26,13 @@ class TagController extends AdminController
      */
     public function index(): View
     {
+        abort_if(!auth()->user()->can('tags_view'), 403);
         return $this->view("tags.index", $this->data);
     }
 
     function tags_data(Request $request)
     {
+        abort_if(!$request->ajax() || !auth()->user()->can('tags_view'), 403);
         if ($request->ajax()) {
             $data = Tag::orderBy("id", "desc")->get();
             return DataTables::of($data)
@@ -47,6 +49,7 @@ class TagController extends AdminController
      */
     public function store(StoreTagRequest $request): RedirectResponse
     {
+        abort_if(!auth()->user()->can('tags_create'), 403);
         Tag::create($request->validated());
 
         return redirect(route("admin.tags.index"))->with(["success" => true, "message" => "New Tag Stored."]);
@@ -57,6 +60,7 @@ class TagController extends AdminController
      */
     public function update(UpdateTagRequest $request, Tag $tag): RedirectResponse
     {
+        abort_if(!auth()->user()->can('tags_update'), 403);
         $validated = $request->validated();
         $tag->name = $validated["name"];
         $tag->slug = $validated["slug"];
@@ -72,6 +76,7 @@ class TagController extends AdminController
      */
     public function destroy(Tag $tag): JsonResponse
     {
+        abort_if(!auth()->user()->can('tags_delete'), 403);
         $tag->delete();
 
         return response()->json(["success" => "false", "message" => "Tag Deleted."]);

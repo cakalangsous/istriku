@@ -11,4 +11,9 @@ class PostCategory extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ["name", "slug", "description"];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

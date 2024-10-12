@@ -4,8 +4,8 @@
 
 /* change your menu color here */
 :root {
-	--cnvs-themecolor: #F39887;
-	--cnvs-themecolor-rgb: 243, 152, 135;
+	--cnvs-themecolor: #9267db;
+	--cnvs-themecolor-rgb: 146, 103, 219;
 	--cnvs-primary-font: 'Domine', serif;
 	--cnvs-body-font: 'Roboto', sans-serif;
 	--cnvs-secondary-font: 'Literata', serif;
@@ -272,7 +272,7 @@ a.more-link i {
 .section-colored { background-color: #FFEAE6; }
 
 .page-title {
-	background-color: #ecf2f4;
+	background-color: var(--cnvs-themecolor);
 }
 
 .dark.section {
@@ -556,6 +556,7 @@ a.more-link i {
 .page-title h1 {
 	letter-spacing: 3px;
 	font-family: var(--cnvs-body-font);
+	color: #ffffff;
 }
 
 .page-title.page-title-center span {
