@@ -13,6 +13,9 @@ class PostController extends Controller
     protected $data;
 
     public function __construct() {
+
+        parent::isInstalled();
+        
         $this->data['categories'] = PostCategory::all();
         $this->data['title'] = 'Home';
         $this->data['description'] = 'Website ini dibuat untuk berbagi renungan, berbagi ilmu, dan berbagi cerita. Semoga apa yang dibagikan di website ini dapat bermanfaat untuk pembaca.';
