@@ -17,7 +17,7 @@
 }
 
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 300px) {
 	#header-wrap #logo img {
 		height: 70px;
 	}
